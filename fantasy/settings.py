@@ -15,7 +15,12 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "prostologin2003@yandex.ru"
+EMAIL_HOST_PASSWORD = "SurXGcKC6LmuCQ3"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
@@ -37,6 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'players',
+    'regist',
 ]
 
 MIDDLEWARE = [
@@ -73,10 +80,15 @@ WSGI_APPLICATION = 'fantasy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": 'fantasy',
+        "USER": 'test_user2',
+        "PASSWORD": "123456789",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
