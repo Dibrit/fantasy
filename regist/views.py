@@ -4,8 +4,10 @@ from rest_framework.mixins import CreateModelMixin, ListModelMixin
 from rest_framework.response import Response
 
 from .serializers import (
+    ChangePasswordSerializer,
     LoginSerializer,
     RegistrationSerializer,
+    ForgotPasswordSerializer,
     UserSerializer,
 )
 
@@ -18,6 +20,16 @@ class RegistrationViewSet(CreateModelMixin, GenericViewSet):
 class LoginViewSet(CreateModelMixin, GenericViewSet):
     permission_classes = (AllowAny,)
     serializer_class = LoginSerializer
+
+
+class ChangePasswordViewSet(CreateModelMixin, GenericViewSet):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = ChangePasswordSerializer
+
+
+class ForgotPasswordViewSet(CreateModelMixin, GenericViewSet):
+    permission_classes = (AllowAny,)
+    serializer_class = ForgotPasswordSerializer
 
 
 class UserViewSet(GenericViewSet, ListModelMixin):

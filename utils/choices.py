@@ -18,3 +18,12 @@ class Country(models.TextChoices):
     POR = ('P', "Por")
     JAP = ('J', "Jap")
     VEN = ('V', "Ven")
+
+
+class Role(models.TextChoices):
+    GOA = ('G', "Goa")
+    DEF = ('D', "Def")
+    MID = ('M', "Mid")
+    ATT = ('A', "Att")
+
+

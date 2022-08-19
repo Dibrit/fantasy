@@ -32,7 +32,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
+CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379/0"
 # Application definition
 
 INSTALLED_APPS = [
@@ -125,6 +126,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+AUTH_USER_MODEL = 'regist.User'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
